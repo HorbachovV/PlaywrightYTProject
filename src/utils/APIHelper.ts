@@ -7,3 +7,20 @@ export async function formatAPIRequest(
 		return index < values.length ? String(values[index]) : match;
 	});
 }
+
+export async function getPOSTAPIRequestBody(fname: string, lname: string, price: number,
+    depositepaid: boolean, additionalneeds: string, checkin: string, checkout: string) {
+
+    const apiRequest: BookingAPI = {
+        firstname: fname,
+        lastname: lname,
+        totalprice: price,
+        depositpaid: depositepaid,
+        additionalneeds: additionalneeds,
+        bookingdates: {
+            checkin: checkin,
+            checkout: checkout
+        }
+    }
+    return apiRequest;
+}
