@@ -21,7 +21,7 @@ pipeline {
 
         stage('Run Playwright Tests') {
             steps {
-                bat 'npx playwright test --reporter=line'
+                bat 'npx playwright test --grep PlaywrightWithJenkins --reporter=line'
             }
         }
     }
